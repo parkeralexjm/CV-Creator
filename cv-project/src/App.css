@@ -1,0 +1,19 @@
+:root {
+  --main-color: rgb(9, 116, 116);
+  --secondary-color: rgb(212, 212, 212);
+  font-family: fantasy;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.appTitle {
+  width: 100vw;
+  background-color: var(--main-color);
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
