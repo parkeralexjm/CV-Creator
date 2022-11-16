@@ -2,37 +2,14 @@ import React, { Component } from "react";
 import Education from "./Education";
 import Experience from "./Experience";
 import Personal from "./Personal";
+import { emptyCV, exampleCV } from "./Utilities";
+import CVDisplay from "./CVDisplay";
 
 class CVInput extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      personal: {
-      firstName: '',
-      lastName: '',
-      personalTitle: '',
-      address: '',
-      phoneNumber: '',
-      email: '',
-      statement: '',
-      },
-      experience: {
-      expPosition: '',
-      expCompany: '',
-      expCity: '',
-      expStartDate: '',
-      expEndDate: '',
-      },
-      education: {
-      edInstitution: '',
-      edCity: '',
-      edQualification: '',
-      edTitle: '',
-      edStartDate: '',
-      edEndDate: '',
-      }
-    }
-  }
+    this.state = exampleCV;
+  };
 
   handlePersonal = (event) => {
     const { name, value } = event.target
@@ -66,25 +43,38 @@ class CVInput extends Component {
       }
     }))
   }
+
+  handleReset = (event) => {
+    this.setState(emptyCV);
+  }
   
   render() {
     const personal = this.state.personal;
     const experience = this.state.experience;
     const education = this.state.education;
     return (
-      <div className="content">
-        <Personal 
-          handlePersonal={this.handlePersonal}
-          personal={personal}
-        />
-        <Experience 
-          handleExperience={this.handleExperience}
-          experience={experience}
-        />
-        <Education 
-          handleEducation={this.handleEducation}
-          education={education}
-        />
+      <div>
+        <div className="content">
+          <Personal 
+            handlePersonal={this.handlePersonal}
+            personal={personal}
+          />
+          <Experience 
+            handleExperience={this.handleExperience}
+            experience={experience}
+          />
+          <Education 
+            handleEducation={this.handleEducation}
+            education={education}
+          />
+        </div>
+        <div className="output">
+          <CVDisplay
+            personal={personal}
+            experience={experience}
+            education={education}
+          />
+        </div>
       </div>
     )
   }

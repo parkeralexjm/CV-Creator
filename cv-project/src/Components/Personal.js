@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-const Personal =({personal, handlePersonal}) => {  
+const Personal = ({personal, handlePersonal}) => {  
   return (
-    <div>
+    <div className="personal">
       <div className="sectionTitle">
         Personal Information
       </div>
