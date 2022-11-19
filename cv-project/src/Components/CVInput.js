@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Education from "./Education";
-import Experience from "./Experience";
-import Personal from "./Personal";
+import Education from "./inputs/Education";
+import Experience from "./inputs/Experience";
+import Personal from "./inputs/Personal";
 import { emptyCV, exampleCV } from "./Utilities";
 import CVDisplay from "./CVDisplay";
 
@@ -54,7 +54,7 @@ class CVInput extends Component {
     const education = this.state.education;
     return (
       <div>
-        <div className="content">
+        <div className="input">
           <Personal 
             handlePersonal={this.handlePersonal}
             personal={personal}

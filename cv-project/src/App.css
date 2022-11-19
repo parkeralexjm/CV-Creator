@@ -1,5 +1,6 @@
 :root {
-  --main-color: rgb(9, 116, 116);
+  --main-color: seagreen;
+  --main-color-light: rgb(119, 177, 144);
   --secondary-color: rgb(212, 212, 212);
   --secondary-color-light: rgb(230, 230, 230);
   font-family: fantasy;
@@ -20,7 +21,7 @@ body {
   box-shadow: 0px -1px 5px 2px black;
 }
 
-.content {
+.input {
   margin: 1.5rem;
   padding: 1.5rem;
   background-color: var(--secondary-color-light);
@@ -40,4 +41,34 @@ body {
 
 .personal > textarea {
   height: 4rem;
+}
+
+.display {
+  border: 2px solid black;
+  margin: 30mm 45mm 30mm 45mm;
+  padding: 1.5rem;
+  size: 21cm 29.7cm;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 0.4fr 1.6fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "header header header"
+    "content content sidebar"
+    "content content sidebar"; 
+}
+
+.personalHeader {
+  grid-area: header;
+  background-color: var(--main-color);
+}
+
+.personalSidebar {
+  grid-area: sidebar;
+  background-color: var(--main-color-light);
+}
+
+.displayContent {
+  grid-area: content;
+  background-color: beige;
 }
