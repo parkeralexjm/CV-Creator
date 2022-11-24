@@ -26,7 +26,7 @@ const Personal = ({personal, handlePersonal}) => {
       />
       <input
       name="address"
-      placeholder="Address"
+      placeholder="Address (Lines split by comma)"
       value={personal.address}
       onChange={handlePersonal}
       />

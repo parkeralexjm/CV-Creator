@@ -3,6 +3,7 @@ import Header from "./display/Header"
 import Sidebar from "./display/Sidebar"
 import DisplayExperience from "./display/DisplayExperience"
 import DisplayEducation from "./display/DisplayEducation"
+import DisplayDescription from "./display/DisplayDescription";
 
 const CVDisplay = ({ personal, experience, education}) => {
   return (
@@ -10,7 +11,7 @@ const CVDisplay = ({ personal, experience, education}) => {
       <Header personal={personal}/>
       <Sidebar personal={personal}/>
       <div className="displayContent">
-        <div className="displayStatement">{personal.statement}</div>
+        <DisplayDescription personal={personal}/>
         <DisplayExperience experience={experience}/>
         <DisplayEducation education={education}/>
       </div>

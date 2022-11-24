@@ -8,8 +8,18 @@ import CVDisplay from "./CVDisplay";
 class CVInput extends Component {
   constructor(props) {
     super(props);
-    this.state = exampleCV;
+    this.state = emptyCV;
+    this.handleReset = this.handleReset.bind(this)
+    this.handleExample = this.handleExample.bind(this)
   };
+
+  handleReset() {  
+    this.setState(emptyCV);
+  }
+
+  handleExample() {
+    this.setState(exampleCV)
+  }
 
   handlePersonal = (event) => {
     const { name, value } = event.target
@@ -44,17 +54,16 @@ class CVInput extends Component {
     }))
   }
 
-  handleReset = (event) => {
-    this.setState(emptyCV);
-  }
+
   
   render() {
     const personal = this.state.personal;
     const experience = this.state.experience;
     const education = this.state.education;
+
     return (
-      <div>
-        <div className="input">
+      <div className="content">
+        <div className="cvInput">
           <Personal 
             handlePersonal={this.handlePersonal}
             personal={personal}
@@ -67,8 +76,14 @@ class CVInput extends Component {
             handleEducation={this.handleEducation}
             education={education}
           />
+          <button onClick={this.handleReset} id="reset">
+            Reset
+          </button>
+          <button onClick={this.handleExample} id="example">
+            Example CV
+          </button>
         </div>
-        <div className="output">
+        <div className="cvOutput">
           <CVDisplay
             personal={personal}
             experience={experience}

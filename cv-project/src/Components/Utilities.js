@@ -1,5 +1,3 @@
-import React from "react";
-
 const emptyCV = {
   personal: {
   firstName: '',
@@ -11,27 +9,27 @@ const emptyCV = {
   statement: '',
   },
   experience: {
-  expPosition: '',
-  expCompany: '',
-  expCity: '',
-  expStartDate: '',
-  expEndDate: '',
-  },
+    expPosition: '',
+    expCompany: '',
+    expCity: '',
+    expStartDate: '',
+    expEndDate: '',
+    },
   education: {
-  edInstitution: '',
-  edCity: '',
-  edQualification: '',
-  edTitle: '',
-  edStartDate: '',
-  edEndDate: '',
-  }
+    edInstitution: '',
+    edCity: '',
+    edQualification: '',
+    edTitle: '',
+    edStartDate: '',
+    edEndDate: '',
+    },
 };
 
 const exampleCV = {
   personal: {
   firstName: 'John',
   lastName: 'Doe',
-  personalTitle: 'Mr',
+  personalTitle: 'Junior Software Developer',
   address: 'Example address, town, postcode',
   phoneNumber: '01000000000',
   email: 'something@somethingelse.com',
@@ -51,7 +49,7 @@ const exampleCV = {
   edTitle: 'Degree',
   edStartDate: '01/01/12',
   edEndDate: '01/01/15',
-  }
+  },
 }
 
 export { emptyCV, exampleCV } ;

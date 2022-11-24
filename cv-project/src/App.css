@@ -3,7 +3,7 @@
   --main-color-light: rgb(119, 177, 144);
   --secondary-color: rgb(212, 212, 212);
   --secondary-color-light: rgb(230, 230, 230);
-  font-family: fantasy;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
@@ -18,39 +18,68 @@ body {
   padding: 1rem 0;
   color: var(--secondary-color);
   font-size: 2rem;
+  font-weight: bold;
   box-shadow: 0px -1px 5px 2px black;
 }
 
-.input {
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cvInput {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   margin: 1.5rem;
   padding: 1.5rem;
+  width: 75%;
   background-color: var(--secondary-color-light);
   box-shadow: 0px 0px 11px -1px grey;
   border-radius: 7px;
 }
 
-.personal, .experience, .education {
+.cvInput > button {
+  border: 1px solid black;
+  border-radius: 1px;
+  padding: 5px;
+}
+
+.personal, .experienceInput, .educationInput {
   display: flex;
   flex-direction: column;
 }
 
-.personal > *, .experience > *, .education > * {
+.personal > input, .experienceInput > input, .educationInput > input {
   padding: 5px;
   margin-top: 4px;
 } 
 
 .personal > textarea {
   height: 4rem;
+  padding: 5px;
+  margin-top: 4px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#example {
+  background-color: rgb(173, 230, 173);
+  
+}
+
+#reset {
+  background-color: rgb(204, 134, 158);
 }
 
 .display {
   border: 2px solid black;
-  margin: 30mm 45mm 30mm 45mm;
   padding: 1.5rem;
-  size: 21cm 29.7cm;
+  width: 21cm;
+  height: 29.7cm;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 0.4fr 1.6fr 1fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     "header header header"
@@ -60,15 +89,63 @@ body {
 
 .personalHeader {
   grid-area: header;
-  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  font-weight: bold;
+  border-bottom: 2px solid black ;
+}
+
+.displayName {
+  font-size: 2.5rem;
+}
+
+.displayTitle {
+  font-size: 1.5rem;
 }
 
 .personalSidebar {
   grid-area: sidebar;
-  background-color: var(--main-color-light);
+  padding: 0.75rem;
+  border-left: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.displayAddress > p {
+  margin: 0;
 }
 
 .displayContent {
   grid-area: content;
-  background-color: beige;
+  padding: 0.75rem;
+}
+
+.displayExp, .displayEd {
+  display: flex;
+  flex-direction: column;
+}
+
+.displayDescriptionHeader, .displayExpHeader, .displayEdHeader {
+  border-bottom: 2px solid lightgray;
+  padding-top: 5px;
+}
+
+.displayExpInfo, .displayEdInfo {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.displayDescriptionDetail {
+  padding: 0.5rem 0;
+}
+
+.displayExpDetail, .displayEdDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
 }
